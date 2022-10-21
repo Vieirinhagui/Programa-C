@@ -25,7 +25,6 @@ menu(){
     printf("6- Buscar Serviço\n");
     printf("7- Finalizar sessão\n");
 }
-
 main(){
     setlocale(LC_ALL,"Portuguese");
     welcome();
@@ -35,3 +34,5 @@ main(){
     menu();
     return 0;
 }
+
+
