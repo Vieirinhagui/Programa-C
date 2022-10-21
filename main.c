@@ -17,13 +17,6 @@ login(){
     scanf("%i",&login1);
     printf("Senha:\n");
     scanf("%i",&senha);
-    if (login1==123 && senha==123){
-        system("cls");
-        menu();
-    }else{
-        printf("Usuário ou senha incorretos");
-    }
-    return 0;
 }
 
 menu()
