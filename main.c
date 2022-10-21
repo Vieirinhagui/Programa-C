@@ -31,10 +31,13 @@ menu()
     printf("Escolha uma opção:\n");
     printf("1- Cadastrar Cliente\n");
     printf("2- Buscar Clientes\n");
+    printf("2- Editar Clientes\n");
     printf("3- Cadastrar Pet\n");
     printf("4- Buscar Pet\n");
+    printf("4- Editar Pet\n");
     printf("5- Cadastrar Serviço\n");
     printf("6- Buscar Serviço\n");
+    printf("6- Editar Serviço\n");
     printf("7- Finalizar sessão\n");
     scanf("%d",&escolha);
 
