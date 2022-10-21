@@ -31,14 +31,14 @@ menu()
     printf("Escolha uma opção:\n");
     printf("1- Cadastrar Cliente\n");
     printf("2- Buscar Clientes\n");
-    printf("2- Editar Clientes\n");
-    printf("3- Cadastrar Pet\n");
-    printf("4- Buscar Pet\n");
-    printf("4- Editar Pet\n");
-    printf("5- Cadastrar Serviço\n");
-    printf("6- Buscar Serviço\n");
-    printf("6- Editar Serviço\n");
-    printf("7- Finalizar sessão\n");
+    printf("3- Editar Clientes\n");
+    printf("4- Cadastrar Pet\n");
+    printf("5- Buscar Pet\n");
+    printf("6- Editar Pet\n");
+    printf("7- Cadastrar Serviço\n");
+    printf("8- Buscar Serviço\n");
+    printf("9- Editar Serviço\n");
+    printf("10- Finalizar sessão\n");
     scanf("%d",&escolha);
 
     switch (escolha){
@@ -61,6 +61,15 @@ menu()
             cad_cli();
             break;
         case 7:
+            cad_cli();
+            break;
+        case 8:
+            cad_cli();
+            break;
+        case 9:
+            cad_cli();
+            break;
+        case 10:
             cad_cli();
             break;
         default:
