@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
-int login1,senha;
+int login1,senha,escolha;
 
 welcome(){
     printf("\n");
@@ -17,6 +17,12 @@ login(){
     scanf("%i",&login1);
     printf("Senha:\n");
     scanf("%i",&senha);
+    if (login1==123 && senha==123){
+            system("cls");
+            menu();
+    }else{
+        printf("senha invalida");
+    }
 }
 
 menu()
@@ -30,6 +36,39 @@ menu()
     printf("5- Cadastrar Serviço\n");
     printf("6- Buscar Serviço\n");
     printf("7- Finalizar sessão\n");
+    scanf("%d",&escolha);
+
+    switch (escolha){
+        case 1:
+            cad_cli();
+            break;
+        case 2:
+            cad_cli();
+            break;
+        case 3:
+            cad_cli();
+            break;
+        case 4:
+            cad_cli();
+            break;
+        case 5:
+            cad_cli();
+            break;
+        case 6:
+            cad_cli();
+            break;
+        case 7:
+            cad_cli();
+            break;
+        default:
+            printf("Opção Invalida!");
+            menu();
+    }
+}
+cad_cli(){
+
+    printf("Cadastrar Cliente");
+
 }
 
 main()
