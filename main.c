@@ -1,7 +1,33 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <winsock2.h>
+#include <windows.h>
+#include <C:\ConectorC\include\mysql.h>
 #include <locale.h>
+
 int login1, senha, escolha, escolhafuncionario;
+
+MYSQL *__stdcall obterConexao()
+{
+    char *servidor = "127.0.0.1";
+    char *usuario = "root";
+    char *senha = "";
+    char *nomeBanco = "bancoC";
+
+    MYSQL *conexao = mysql_init(NULL);
+
+    if (!mysql_real_connect(conexao, servidor, usuario, senha, nomeBanco, 0, NULL, 0))
+    {
+        fprintf(stderr, "\n%s\n", mysql_error(conexao));
+        mysql_close(conexao);
+        exit(1);
+    }
+    else
+    {
+        printf("\nConexao realizada com sucesso!\n");
+        return conexao;
+    }
+}
 
 welcome()
 {
@@ -19,22 +45,9 @@ login()
     scanf("%i", &login1);
     printf("Senha:\n");
     scanf("%i", &senha);
-    if (login1 == 123)
-    {
-        system("cls");
-        menu();
-    }
-    else if (login1 == 234)
-    {
-        system("cls");
-        menu_root();
-    }
-    else
-    {
-        printf("Usuario ou Senha Invalidos!");
-        login();
-    }
+    inserir();
 }
+
 menu_root()
 {
     printf("1- Cadastrar Funcionário\n");
@@ -44,19 +57,20 @@ menu_root()
     switch (escolhafuncionario)
     {
     case 1:
-        cad_cli();
+        inserir();
         break;
     case 2:
-        cad_cli();
+        inserir();
         break;
     default:
         printf("Opção Invalida!");
         menu_root();
     }
 }
+
 menu()
 {
-    setlocale(LC_ALL, "Portuguese");
+    setlocale(LC_ALL,"Portuguese");
     printf("Escolha uma opção:\n");
     printf("1- Cadastrar Cliente\n");
     printf("2- Buscar Clientes\n");
@@ -73,48 +87,61 @@ menu()
     switch (escolha)
     {
     case 1:
-        cad_cli();
+        printf("ok");
         break;
     case 2:
-        cad_cli();
+        printf("ok");
         break;
     case 3:
-        cad_cli();
+        printf("ok");
         break;
     case 4:
-        cad_cli();
+        printf("ok");
         break;
     case 5:
-        cad_cli();
+        printf("ok");
         break;
     case 6:
-        cad_cli();
+        printf("ok");
         break;
     case 7:
-        cad_cli();
+        printf("ok");
         break;
     case 8:
-        cad_cli();
+        printf("ok");
         break;
     case 9:
-        cad_cli();
+        printf("ok");
         break;
     case 10:
-        cad_cli();
+        printf("ok");
         break;
     default:
-        printf("Opção Invalida!");
+        printf("Opção Inválida!");
         menu();
     }
 }
-cad_cli()
+void inserir(MYSQL conexao, char nomecliente, int telefonecliente, char emailcliente, int cpfcliente, char enderecocliente)
 {
-    printf("Cadastrar Cliente");
+    printf("Nome: \n");
+    scanf("%s",&nomecliente);
+    printf("Telefone:\n");
+    scanf("%d",&telefonecliente);
+    printf("Email:\n");
+    scanf("%s",&emailcliente);
+    printf("CPF:\n");
+    scanf("%s",&cpfcliente);
+    printf("Endereço:\n");
+    scanf("%s",&enderecocliente);
+    char query[100];
+    sprintf(query, "INSERT INTO 'clientes' (nomecliente, telefonecliente , emailcliente , cpfcliente , enderecocliente ) VALUES( '%s', '%d' , '%s', '%d','%s' );", nomecliente, telefonecliente , emailcliente,cpfcliente,enderecocliente);
+
 }
 
-main()
+int main()
 {
-    setlocale(LC_ALL, "Portuguese");
+    setlocale(LC_ALL,"Portuguese");
+    MYSQL *conexao = obterConexao();
     welcome();
     printf("\n");
     login();
