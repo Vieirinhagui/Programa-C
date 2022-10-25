@@ -24,12 +24,13 @@
 ### Configurando o MySQL Connector/C no Codeblocks
 Nesta etapa será feita a inserção da biblioteca na IDE.
 
-1. Inicializa o Code::Blocks
-2. No menu vá para Settings/Compiler/Linker Compiler
+1. Inicializa o Code::Blocks.
+2. No menu vá para Settings/Compiler/Linker Compiler.
 ![Screen1](https://cdn.discordapp.com/attachments/982291225283551262/1034524002951106640/unknown.png)
 
-Vá para função 'ADD' encontre a pasta em que foi extraido MySQL Connector/C e adicione os arquivos libmysql.lib e libmysql.dll da pasta lib (C:\conectorC\lib\libmysql.lib) 
-3. Novamente no menu vá para Settings/Compiler/Search Compiler![Screen2](https://cdn.discordapp.com/attachments/982291225283551262/1034528875222401084/unknown.png)
+Vá para função 'ADD' encontre a pasta em que foi extraido MySQL Connector/C e adicione os arquivos libmysql.lib e libmysql.dll da pasta lib (C:\conectorC\lib\libmysql.lib).
+3. Novamente no menu vá para Settings/Compiler/Search Compiler.
+![Screen2](https://cdn.discordapp.com/attachments/982291225283551262/1034528875222401084/unknown.png)
 
 Vá para função 'ADD' encontre a pasta em que foi extraido MySQL Connector/C , em Compiler adicione as pastas include (C:\conectorC\include) , lib (C:\conectorC\lib), bin (C:\conectorC\bin) e em Linker lib(C:\conectorC\lib) e bin(C:\conectorC\bin).
 
