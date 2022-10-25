@@ -34,8 +34,14 @@ Vá para função 'ADD' encontre a pasta em que foi extraido MySQL Connector/C e
 
 Vá para função 'ADD' encontre a pasta em que foi extraido MySQL Connector/C , em Compiler adicione as pastas include (C:\conectorC\include) , lib (C:\conectorC\lib), bin (C:\conectorC\bin) e em Linker lib(C:\conectorC\lib) e bin(C:\conectorC\bin).
 
-### Instalando XAMPP 
+### Instalando XAMPP e configurando 
 
-1- Realizar o download do instalador em [XAMPP](https://www.apachefriends.org/pt_br/index.html) de acordo com o seu sistema operacional.
-2- Realizar instalação padrão do software.
-3- Inicar o Apache e logo após o MySQL.
+1. Realizar o download do instalador em [XAMPP](https://www.apachefriends.org/pt_br/index.html) de acordo com o seu sistema operacional.
+2. Realizar instalação padrão do software.
+3. Iniciar o software e logo após iniciar Apache e o MySQL.
+![Screen3](https://cdn.discordapp.com/attachments/982291225283551262/1034532879935479849/unknown.png)
+
+4. Abrir no navegador [http://localhost/phpmyadmin](http://localhost/phpmyadmin)
+[Arquivo banco.sql](https://drive.google.com/file/d/1NFzgvv2VZtS_--Lt9Ntjf7maSay7sWMn/view?usp=sharing)
+
+
