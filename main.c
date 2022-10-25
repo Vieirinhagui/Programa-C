@@ -256,6 +256,9 @@ cadastroPet()
         printf("Pelagem do Pet:");
         scanf("%s", &pelagempet);
         fflush(stdin);
+        printf("CPF dono do Pet:");
+        scanf("%s", &cpfdonopet);
+        fflush(stdin);
         printf("Peso do Pet em KG:");
         scanf("%s", &pesopet);
         fflush(stdin);
@@ -268,10 +271,7 @@ cadastroPet()
         printf("Especie do Pet:");
         scanf("%s", &especiepet);
         fflush(stdin);
-        printf("CPF dono do Pet:");
-        scanf("%s", &cpfdonopet);
-        fflush(stdin);
-        sprintf(query4, "INSERT INTO `animal`(`idAnimal`, `nomePet`, `cpfdonopet`, `pelagemPet`, `PesoPet`, `SexoPet`, `racaPet`, `especiePet`) VALUES ('%s','%s','%s','%s','%s','%s','%s')",nomepet,pelagempet,cpfdonopet,pesopet,sexopet,racapet,especiepet) ;
+        sprintf(query4, "INSERT INTO `animal`(`nomePet`, `cpfdonopet`, `pelagemPet`, `PesoPet`, `SexoPet`, `racaPet`, `especiePet`) VALUES ('%s','%s','%s','%s','%s','%s','%s')",nomepet,cpfdonopet,pelagempet,pesopet,sexopet,racapet,especiepet) ;
         mysql_query(&conexao, query4);
         printf("\nCadastrado com sucesso\n");
         sleep(1);
@@ -355,11 +355,11 @@ editarPet()
         printf("-----------------------------------------------\n");
         printf("             EDITOR DE PETS              \n");
         printf("-----------------------------------------------\n");
-        printf("Digite o numero 'ID' do cliente para editar:");
+        printf("Digite o numero 'ID' do pet para editar:");
         scanf("%s", &busidpet);
         fflush(stdin);
         system("cls");
-        sprintf(query6, "SELECT * FROM `animal` WHERE `cpfdonopet`='%s';",busidpet);
+        sprintf(query6, "SELECT * FROM `animal` WHERE `idAnimal`='%s';",busidpet);
         if (mysql_query(&conexao,query6))
         {
             fprintf(stderr, "%s\n", mysql_error(&conexao));
@@ -379,50 +379,50 @@ editarPet()
         printf("5-Sexo do Pet\n");
         printf("6-Raca do Pet\n");
         printf("7-Especie do Pet\n");
-        printf("8-Apagar Cliente\n");
+        printf("8-Apagar Pet\n");
         scanf("%d", &escolha2);
         switch (escolha2)
         {
         case 1:
             printf("Qual o novo nome do Pet?");
             scanf("%s", &editnomepet);
-            sprintf(query7, "UPDATE `animal` SET `nomePet`='%s' WHERE `cpfdonopet`='%s'", editnomepet, busidpet);
+            sprintf(query7, "UPDATE `animal` SET `nomePet`='%s' WHERE `idAnimal`='%s'", editnomepet, busidpet);
             mysql_query(&conexao, query7);
             break;
         case 2:
             printf("Qual o novo CPF do dono?");
             scanf("%s", &editcpfdono);
-            sprintf(query7, "UPDATE `animal` SET `cpfdonopet`='%s' WHERE`cpfdonopet`='%s'", editcpfdono, busidpet);
+            sprintf(query7, "UPDATE `animal` SET `cpfdonopet`='%s' WHERE`idAnimal`='%s'", editcpfdono, busidpet);
             mysql_query(&conexao, query7);
             break;
         case 3:
             printf("Qual a Pelagem do Pet?");
             scanf("%s", &editpelagempet);
-            sprintf(query7, "UPDATE `animal` SET `pelagemPet`='%s' WHERE`cpfdonopet`='%s'", editpelagempet, busidpet);
+            sprintf(query7, "UPDATE `animal` SET `pelagemPet`='%s' WHERE`idAnimal`='%s'", editpelagempet, busidpet);
             mysql_query(&conexao, query7);
             break;
         case 4:
             printf("Qual o peso do Pet?");
             scanf("%s", &editpesopet);
-            sprintf(query7, "UPDATE `animal` SET `PesoPet`='%s' WHERE`cpfdonopet`='%s'", editpesopet, busidpet);
+            sprintf(query7, "UPDATE `animal` SET `PesoPet`='%s' WHERE`idAnimal`='%s'", editpesopet, busidpet);
             mysql_query(&conexao, query7);
             break;
         case 5:
             printf("Qual o Sexo do Pet?");
             scanf("%s", &editsexopet);
-            sprintf(query7, "UPDATE `animal` SET `SexoPet`='%s' WHERE`cpfdonopet`='%s'", editsexopet, busidpet);
+            sprintf(query7, "UPDATE `animal` SET `SexoPet`='%s' WHERE`idAnimal`='%s'", editsexopet, busidpet);
             mysql_query(&conexao, query7);
             break;
         case 6:
             printf("Qual a Raca do Pet?");
             scanf("%s", &editracapet);
-            sprintf(query7, "UPDATE `animal` SET `racaPet`='%s' WHERE`cpfdonopet`='%s'", editracapet, busidpet);
+            sprintf(query7, "UPDATE `animal` SET `racaPet`='%s' WHERE`idAnimal`='%s'", editracapet, busidpet);
             mysql_query(&conexao, query7);
             break;
         case 7:
             printf("Qual a Especie do Pet?");
             scanf("%s", &editespeciepet);
-            sprintf(query7, "UPDATE `animal` SET `especiePet`='%s' WHERE`cpfdonopet`='%s'", editespeciepet, busidpet);
+            sprintf(query7, "UPDATE `animal` SET `especiePet`='%s' WHERE`idAnimal`='%s'", editespeciepet, busidpet);
             mysql_query(&conexao, query7);
             break;
         case 8:
@@ -432,12 +432,12 @@ editarPet()
             scanf("%d",&deletecliente);
             switch (deletecliente){
                 case 1:
-                sprintf(query7, "DELETE FROM `animal` WHERE `idCliente`='%s'",busidpet);
+                sprintf(query7, "DELETE FROM `animal` WHERE `idAnimal`='%s'",busidpet);
                 mysql_query(&conexao, query7);
                 system("cls");
                 printf("\n");
                 printf("\n");
-                printf("Cliente apagado com sucesso");
+                printf("Pet apagado com sucesso");
                 Sleep(1000);
                 system("cls");
                 menu();
