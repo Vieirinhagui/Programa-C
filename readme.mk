@@ -13,7 +13,7 @@
 ## Instalando e configurando
 
 -Instalando o MySQL Connector/C
-1- Realizar o download do arquivo ZIP em [https://downloads.mysql.com/archives/c-c/](https://downloads.mysql.com/archives/c-c/) de acordo com seu sistema operacional.
+1- Realizar o download do arquivo ZIP em MySQL Product Archives <https://downloads.mysql.com/archives/c-c/> de acordo com seu sistema operacional.
 2- Criar uma pasta com nome "ConectorC"no Disco Local C , após isso deve ser extraido o arquivo baixado nesta pasta.
 
 -Instalando Codeblocks
