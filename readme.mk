@@ -6,8 +6,8 @@
 
 ## 🛠 Tecnologias
 
-C
-SQL
-XAMPP
+  -C
+  -SQL
+  -XAMPP
 
 ##
