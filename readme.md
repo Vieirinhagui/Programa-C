@@ -41,7 +41,9 @@ Vá para função 'ADD' encontre a pasta em que foi extraido MySQL Connector/C ,
 3. Iniciar o software e logo após iniciar Apache e o MySQL.
 ![Screen3](https://cdn.discordapp.com/attachments/982291225283551262/1034532879935479849/unknown.png)
 
-4. Abrir no navegador [http://localhost/phpmyadmin](http://localhost/phpmyadmin)
-[Arquivo banco.sql](https://drive.google.com/file/d/1NFzgvv2VZtS_--Lt9Ntjf7maSay7sWMn/view?usp=sharing)
-
+4. Baixar o arquivo [banco.sql]https://drive.google.com/file/d/1YPMbxw5LyDK21TM7OzV4s-sl5Axe1htN/view?usp=sharing)
+5. Abrir no navegador [http://localhost/phpmyadmin](http://localhost/phpmyadmin)
+6. Criar uma base de dados com nome bancoc
+![Screen4](https://user-images.githubusercontent.com/96095997/197899392-8eb81743-5daa-4b3a-b554-0bf44df8eaa8.png)
+7. 
 
