@@ -1,3 +1,7 @@
+# ePET
+
+> Sistema desenvolvido para matéria de Engenharia de Requisitos do curso de Engenharia de Software da Universidade Católica de Brasília.
+
 ![prewview](https://cdn.discordapp.com/attachments/982291225283551262/1034518787095015444/unknown.png)
 
 ## 🛠 Tecnologias
