@@ -184,7 +184,7 @@ editarCliente()
             mysql_query(&conexao, query3);
             break;
         case 5:
-            printf("Qual o novo Endere�o?");
+            printf("Qual o novo Endereço?");
             scanf("%s", &editenderecocliente);
             sprintf(query3, "UPDATE `clientes` SET `telefoneCliente`='%s' WHERE `idCliente`='%s'", editenderecocliente, busidcliente);
             mysql_query(&conexao, query3);
@@ -210,7 +210,7 @@ editarCliente()
                 menu();
                 break;
                 default:
-                    printf("op��o incorreta");
+                    printf("opção incorreta");
                     break;
             }
         default:
@@ -221,7 +221,7 @@ editarCliente()
     }
     else
     {
-        printf("Falha de conex�o");
+        printf("Falha de conexão");
         printf("Erro %d : %sn", mysql_errno(&conexao), mysql_error(&conexao));
         return 0;
     }
@@ -262,10 +262,10 @@ cadastroPet()
         printf("Sexo do pet:");
         scanf("%s", &sexopet);
         fflush(stdin);
-        printf("Ra�a do Pet:");
+        printf("Raça do Pet:");
         scanf("%s", &racapet);
         fflush(stdin);
-        printf("Esp�cie do Pet:");
+        printf("Espécie do Pet:");
         scanf("%s", &especiepet);
         fflush(stdin);
         sprintf(query4, "INSERT INTO `animal`(`nomePet`, `cpfdonopet`, `pelagemPet`, `PesoPet`, `SexoPet`, `racaPet`, `especiePet`) VALUES ('%s','%s','%s','%s','%s','%s','%s')",nomepet,cpfdonopet,pelagempet,pesopet,sexopet,racapet,especiepet) ;
@@ -278,7 +278,7 @@ cadastroPet()
     }
     else
     {
-        printf("Falha de conex�o");
+        printf("Falha de conexão");
         printf("Erro %d : %sn", mysql_errno(&conexao), mysql_error(&conexao));
     }
 }
@@ -319,7 +319,7 @@ buscarPet()
     }
     else
     {
-        printf("Falha de conex�o");
+        printf("Falha de conexão");
         printf("Erro %d : %sn", mysql_errno(&conexao), mysql_error(&conexao));
     }
     return 0;
@@ -352,7 +352,7 @@ editarPet()
         printf("-----------------------------------------------\n");
         printf("             EDITOR DE PETS              \n");
         printf("-----------------------------------------------\n");
-        printf("Digite o n�mero 'ID' do pet para editar:");
+        printf("Digite o número 'ID' do pet para editar:");
         scanf("%s", &busidpet);
         fflush(stdin);
         system("cls");
@@ -411,13 +411,13 @@ editarPet()
             mysql_query(&conexao, query7);
             break;
         case 6:
-            printf("Qual a Raca do Pet?");
+            printf("Qual a Raça do Pet?");
             scanf("%s", &editracapet);
             sprintf(query7, "UPDATE `animal` SET `racaPet`='%s' WHERE`idAnimal`='%s'", editracapet, busidpet);
             mysql_query(&conexao, query7);
             break;
         case 7:
-            printf("Qual a Especie do Pet?");
+            printf("Qual a Espécie do Pet?");
             scanf("%s", &editespeciepet);
             sprintf(query7, "UPDATE `animal` SET `especiePet`='%s' WHERE`idAnimal`='%s'", editespeciepet, busidpet);
             mysql_query(&conexao, query7);
@@ -443,7 +443,7 @@ editarPet()
                 menu();
                 break;
                 default:
-                    printf("op��o incorreta");
+                    printf("opção incorreta");
                     break;
             }
         default:
@@ -454,7 +454,7 @@ editarPet()
     }
     else
     {
-        printf("Falha de conex�o");
+        printf("Falha de conexão");
         printf("Erro %d : %sn", mysql_errno(&conexao), mysql_error(&conexao));
         return 0;
     }
@@ -475,12 +475,12 @@ cadastroServico()
         printf("\n");
         printf("\n");
         printf("-----------------------------------------------\n");
-        printf("             CADASTRO DE SERVI�OS              \n");
+        printf("             CADASTRO DE SERVIÇOS              \n");
         printf("-----------------------------------------------\n");
         printf("CPF do Cliente:");
         scanf("%s", &servcpfcliente);
         fflush(stdin);
-        printf("Tipo de Servico:");
+        printf("Tipo de Serviço:");
         scanf("%s", &servtype);
         fflush(stdin);
         printf("Data de Entrada:");
@@ -499,7 +499,7 @@ cadastroServico()
     }
     else
     {
-        printf("Falha de conexaon");
+        printf("Falha de conexão");
         printf("Erro %d : %sn", mysql_errno(&conexao), mysql_error(&conexao));
     }
 }
@@ -517,9 +517,9 @@ buscarServico()
         printf("\n");
         printf("\n");
         printf("-----------------------------------------------\n");
-        printf("             BUSCADOR DE SERVI�OS              \n");
+        printf("             BUSCADOR DE SERVIÇOS              \n");
         printf("-----------------------------------------------\n");
-        printf("Digite o cpf para localizar o servi�o:");
+        printf("Digite o cpf para localizar o serviço:");
         scanf("%s", &buscpfserv);
         fflush(stdin);
         system("cls");
@@ -532,7 +532,7 @@ buscarServico()
         res = mysql_use_result(&conexao);
         while ((row = mysql_fetch_row(res)) != NULL)
         {
-            printf("ID:%s\nCPF Cliente:%s\nTipo de Servi�o:%s\nData de Entrada:%s\nData de Sa�da:%s\n\n\n\n ", row[0], row[1], row[2], row[3], row[4]);
+            printf("ID:%s\nCPF Cliente:%s\nTipo de Serviço:%s\nData de Entrada:%s\nData de Saída:%s\n\n\n\n ", row[0], row[1], row[2], row[3], row[4]);
         }
         mysql_free_result(res);
         mysql_close(&conexao);
@@ -540,7 +540,7 @@ buscarServico()
     }
     else
     {
-        printf("Falha de conex�o");
+        printf("Falha de conexão");
         printf("Erro %d : %sn", mysql_errno(&conexao), mysql_error(&conexao));
     }
     return 0;
@@ -582,7 +582,7 @@ editarServico()
         res = mysql_use_result(&conexao);
         while ((row = mysql_fetch_row(res)) != NULL)
         {
-            printf("ID:%s\nCPF Cliente:%s\nTipo de Servico:%s\nData de Entrada:%s\nData de Saida:%s\n\n\n\n ", row[0], row[1], row[2], row[3], row[4]);
+            printf("ID:%s\nCPF Cliente:%s\nTipo de Serviço:%s\nData de Entrada:%s\nData de Saida:%s\n\n\n\n ", row[0], row[1], row[2], row[3], row[4]);
         }
         printf("\n\n\nQual dado quer alterar\n");
         printf("1-CPF\n");
@@ -600,7 +600,7 @@ editarServico()
             mysql_query(&conexao, query11);
             break;
         case 2:
-            printf("Qual o Tipo de Servico?");
+            printf("Qual o Tipo de Serviço?");
             scanf("%s", &editservtype);
             sprintf(query11, "UPDATE `clientes` SET `tipo`='%s' WHERE `idservico`='%s'", editservtype, busidserv1);
             mysql_query(&conexao, query11);
@@ -638,7 +638,7 @@ editarServico()
                 menu();
                 break;
                 default:
-                    printf("op��o incorreta");
+                    printf("opção incorreta");
                     break;
             }
         default:
@@ -649,7 +649,7 @@ editarServico()
     }
     else
     {
-        printf("Falha de conex�o");
+        printf("Falha de conexão");
         printf("Erro %d : %sn", mysql_errno(&conexao), mysql_error(&conexao));
         return 0;
     }
@@ -670,55 +670,25 @@ welcome()
     menu();
 }
 
-login()
-{
-    printf("\n");
-    printf("\n");
-    printf("-----------------------------------------------\n");
-    printf("                 LOGIN E SENHA                 \n");
-    printf("-----------------------------------------------\n");
-}
-
-menu_root()
-{
-    int escolhafuncionario;
-    printf("1- Cadastrar Funcion�rio\n");
-    printf("2- Buscar Funcion�rio\n");
-    scanf("%d", &escolhafuncionario);
-
-    switch (escolhafuncionario)
-    {
-    case 1:
-        printf("ok");
-        break;
-    case 2:
-        printf("ok");
-        break;
-    default:
-        printf("Op��o Inv�lida!");
-        menu_root();
-    }
-}
-
 menu()
 {
     setlocale(LC_ALL,"Portuguese");
     int escolha;
     printf("\n");
     printf("-----------------------------------------------\n");
-    printf("                 MENU DE OP��ES                \n");
+    printf("                 MENU DE OPÇÕES                \n");
     printf("-----------------------------------------------\n");
     printf("\n");
-    printf("Escolha uma op��o:\n");
+    printf("Escolha uma opções:\n");
     printf("1- Cadastrar Cliente\n");
     printf("2- Buscar Clientes\n");
     printf("3- Editar Clientes\n");
     printf("4- Cadastrar Pet\n");
     printf("5- Buscar Pet\n");
     printf("6- Editar Pet\n");
-    printf("7- Cadastrar Servi�o\n");
-    printf("8- Buscar Servi�o\n");
-    printf("9- Editar Servi�o\n");
+    printf("7- Cadastrar Serviço\n");
+    printf("8- Buscar Serviço\n");
+    printf("9- Editar Serviço\n");
     scanf("%d", &escolha);
 
     switch (escolha)
@@ -760,7 +730,7 @@ menu()
         editarServico();
         break;
     default:
-        printf("Op��o Inv�lida!");
+        printf("Opção Inválida!");
         menu();
         break;
     }
