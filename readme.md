@@ -50,3 +50,6 @@ Vá para função 'ADD' encontre a pasta em que foi extraido MySQL Connector/C ,
 9. Selecionar o arquivo banco.sql e confirmar.
 ![Screen6](https://media.discordapp.net/attachments/982291225283551262/1034608773878259742/unknown.png?width=732&height=193)
 
+### Execução
+Basta compilar e executar o [código](https://github.com/Vieirinhagui/Programa-C/blob/main/main.c)
+
