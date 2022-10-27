@@ -30,7 +30,7 @@ Nesta etapa será feita a inserção da biblioteca na IDE.
 
 Vá para função 'ADD' encontre a pasta em que foi extraido MySQL Connector/C e adicione os arquivos libmysql.lib e libmysql.dll da pasta lib (C:\conectorC\lib\libmysql.lib).
 3. Novamente no menu vá para Settings/Compiler/Search Compiler.
-![Screen2](https://cdn.discordapp.com/attachments/982291225283551262/1034528875222401084/unknown.png)
+![Screen2](https://media.discordapp.net/attachments/982291225283551262/1034529264286044221/unknown.png?width=693&height=676)
 
 Vá para função 'ADD' encontre a pasta em que foi extraido MySQL Connector/C , em Compiler adicione as pastas include (C:\conectorC\include) , lib (C:\conectorC\lib), bin (C:\conectorC\bin) e em Linker lib(C:\conectorC\lib) e bin(C:\conectorC\bin).
 
@@ -45,6 +45,8 @@ Vá para função 'ADD' encontre a pasta em que foi extraido MySQL Connector/C ,
 5. Abrir no navegador [http://localhost/phpmyadmin](http://localhost/phpmyadmin)
 6. Criar uma base de dados com nome bancoc
 ![Screen4](https://user-images.githubusercontent.com/96095997/197899392-8eb81743-5daa-4b3a-b554-0bf44df8eaa8.png)
-7. Selecionar o bancoc e clicar em **IMPORTAR**
-8. 
+7. Selecionar o bancoc e clicar em **IMPORTAR** 
+![Screen5](https://cdn.discordapp.com/attachments/982291225283551262/1034608601232318494/unknown.png)
+9. Selecionar o arquivo banco.sql e confirmar.
+![Screen6](https://media.discordapp.net/attachments/982291225283551262/1034608773878259742/unknown.png?width=732&height=193)
 
